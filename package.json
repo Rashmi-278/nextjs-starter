@@ -10,7 +10,7 @@
   "homepage": "http://next-auth-example.now.sh",
   "main": "",
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 3001",
     "build": "next build",
     "start": "next start"
   },
@@ -20,9 +20,10 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "@next-auth/faunadb-adapter": "0.0.1-pr.19.42",
+    "crypto": "^1.0.1",
+    "faunadb": "^4.1.0",
     "next": "^10.0.6",
-    "next-auth": "^3.4.2",
+    "next-auth": "^3.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
