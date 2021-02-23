@@ -6,11 +6,14 @@ import Fauna from '@/adapters'
 import faunadb from 'faunadb'
 import slugify from 'slugify'
 const isProduction = process.env.NODE_ENV === 'production'
+// const faunaClient = new faunadb.Client({
+//   secret: process.env.FAUNADB_SECRET ?? 'secret',
+//   scheme: isProduction ? 'https' : 'http',
+//   domain: isProduction ? 'db.fauna.com' : 'localhost',
+//   ...(isProduction ? {} : { port: 3000 }),
+// })
 const faunaClient = new faunadb.Client({
-  secret: process.env.FAUNADB_SECRET ?? 'secret',
-  scheme: isProduction ? 'https' : 'http',
-  domain: isProduction ? 'db.fauna.com' : 'localhost',
-  ...(isProduction ? {} : { port: 3000 }),
+  secret: process.env.FAUNADB_SECRET
 })
 
 const authHandler: NextApiHandler = (req, res) => NextAuth(req, res, options)
